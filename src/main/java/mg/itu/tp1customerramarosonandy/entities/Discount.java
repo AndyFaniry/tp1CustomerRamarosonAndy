@@ -40,37 +40,72 @@ public class Discount implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "discount")
     private Collection<Customer> customerCollection;
 
+    /**
+     *
+     */
     public Discount() {
     }
 
+    /**
+     *
+     * @param code
+     */
     public Discount(String code) {
         this.code = code;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCode() {
         return code;
     }
 
+    /**
+     *
+     * @param code
+     */
     public void setCode(String code) {
         this.code = code;
     }
 
+    /**
+     *
+     * @return
+     */
     public BigDecimal getRate() {
         return rate;
     }
 
+    /**
+     *
+     * @param rate
+     */
     public void setRate(BigDecimal rate) {
         this.rate = rate;
     }
 
+    /**
+     *
+     * @return
+     */
     public Collection<Customer> getCustomerCollection() {
         return customerCollection;
     }
 
+    /**
+     *
+     * @param customerCollection
+     */
     public void setCustomerCollection(Collection<Customer> customerCollection) {
         this.customerCollection = customerCollection;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 0;
@@ -78,6 +113,11 @@ public class Discount implements Serializable {
         return hash;
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -91,6 +131,10 @@ public class Discount implements Serializable {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "mg.itu.tp1customerramarosonandy.entities.Discount[ code=" + code + " ]";
