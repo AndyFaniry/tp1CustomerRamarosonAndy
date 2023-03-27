@@ -10,13 +10,14 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import java.util.List;
 import mg.itu.tp1customerramarosonandy.entities.Customer;
+
 /**
  *
  * @author ramar
  */
 @Stateless
 public class CustomerManager {
-    
+
     @PersistenceContext(unitName = "customerPU")
     private EntityManager em;
 
@@ -24,26 +25,29 @@ public class CustomerManager {
      *
      * @return
      */
-    public List<Customer> getAllCustomers() {  
+    public List<Customer> getAllCustomers() {
         Query query = em.createNamedQuery("Customer.findAll");
         return query.getResultList();
-    }  
-        
+    }
+
     /**
      *
      * @param customer
      * @return
      */
     public Customer update(Customer customer) {
-      return em.merge(customer);  
-    }   
+        return em.merge(customer);
+    }
 
     /**
      *
      * @param customer
      */
     public void persist(Customer customer) {
-         em.persist(customer);
-       }
-    
+        em.persist(customer);
+    }
+
+    public Customer findById(int idCustomer) {
+        return em.find(Customer.class, idCustomer);
+    }
 }
