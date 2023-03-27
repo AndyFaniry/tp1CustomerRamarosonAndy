@@ -5,6 +5,7 @@
 package mg.itu.tp1customerramarosonandy.jsf;
 
 import jakarta.ejb.EJB;
+import jakarta.faces.convert.FacesConverter;
 import jakarta.inject.Named;
 import jakarta.faces.view.ViewScoped;
 import java.io.Serializable;
